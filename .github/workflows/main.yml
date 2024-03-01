@@ -1,0 +1,21 @@
+name: Sync Talkstuffweb AND Newtalkstuffweb Repositories
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout smplrnlab2.1
+        uses: actions/checkout@v2
+
+      - name: Push changes to github-slideshow
+        run: |
+          git remote add newtalkstuffweb https://github.com/woletokun/github-slideshow.git
+          git push newtalkstuffweb HEAD:master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
