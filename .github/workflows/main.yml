@@ -18,6 +18,6 @@ jobs:
           git config --global user.name 'woletokun'
           git config --global user.email 'ooyewole2020@outlook.com'
           git remote add newtalkstuffweb https://github.com/woletokun/github-slideshow.git
-          git push newtalkstuffweb HEAD:master
+          git push newtalkstuffweb master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GHA_PAT: ${{ secrets.GHA_PAT }}
